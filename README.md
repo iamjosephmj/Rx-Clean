@@ -89,3 +89,9 @@ you’re using(in our case it is Android).
   
 Before we dive in to the code, I would suggest you to read a bit about 
 <a href= "https://en.wikipedia.org/wiki/SOLID">`SOLID`</a> principles.
+
+This is the configurations that I had used in the project:
+* <a href="https://dagger.dev/">`Dagger2`</a>
+* <a href="https://github.com/sockeqwe/AdapterDelegates">`AdapterDelegates`</a>
+* <a href="https://github.com/ReactiveX/RxKotlin">`RxKotlin`</a>
+* <a href="https://developer.android.com/topic/libraries/architecture/viewmodel">`ViewModels`</a>
