@@ -29,7 +29,7 @@ Reactive Programming.
 
 * [Getting Started](#Getting-Started)
 * [Clean Architecture](#Clean-Architecture)
-    * [Why is this important](#Why-is-this-important?)
+    * [Why is this important](#Why-is-this-important-?)
     * [The Approach](#The-Approach)
     * [Benefits](#Benefits)
 
@@ -54,7 +54,7 @@ Clean architecture is a software design philosophy that separates the elements o
 An important goal of clean architecture is to provide developers with a way to organize code in such a way that 
 it encapsulates the business logic but keeps it separate from the delivery mechanism.
 
-### Why is this important?
+### Why is this important ?
 
 When you take a real software development, Implementing an architecture have one common - to maintain the complexity 
 of your codebase. This may not be a big issue if the codebase are small, but trust me, this is be real lifesaver when 
