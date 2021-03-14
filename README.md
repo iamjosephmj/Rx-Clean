@@ -28,6 +28,8 @@ Reactive Programming.
 ## Table of contents
 
 * [Getting Started](#Getting-Started)
+* [Clean Architecture](#Clean-Architecture)
+    * [Why is this important](#Why-is-this-important)
 
 ## Getting Started
 
@@ -43,3 +45,23 @@ Because the Clean architecture can be used in any application and platform, not 
 it’s very informative to understand the idea behind it, and why it’s a good solution, 
 for most problems we find nowadays, as programmers. With that in mind, in this tutorial, 
 you’ll learn how to use the Clean architecture pattern to build a `GitHubJobs` app, a simple app that displays jobs that are available in github and display that on a list.
+
+## Clean Architecture
+
+Clean architecture is a software design philosophy that separates the elements of a design into ring levels. 
+An important goal of clean architecture is to provide developers with a way to organize code in such a way that 
+it encapsulates the business logic but keeps it separate from the delivery mechanism.
+
+### Why is this important
+
+When you take a real software development, Implementing an architecture have one common - to maintain the complexity 
+of your codebase. This may not be a big issue if the codebase are small, but trust me, this is be real lifesaver when 
+it come to larger ones.
+
+#### The Approach
+
+<p align="center">
+  <img src="https://github.com/iamjosephmj/Rx-Clean/blob/master/repo-res/images/clean-graph.png" />
+</p>
+
+You might have seen this graph before.
