@@ -83,4 +83,5 @@ you’re using(in our case it is Android).
 * There’s a method to the madness. When someone else works on your code, 
   they can learn the app’s architecture and will understand it better.
   
-Before we dive in to the code, I would suggest you to read a bit about <a href= "https://en.wikipedia.org/wiki/SOLID">`SOLID`<\a> principles.
+Before we dive in to the code, I would suggest you to read a bit about 
+<a href= "https://en.wikipedia.org/wiki/SOLID">`SOLID`<\a> principles.
