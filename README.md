@@ -81,7 +81,9 @@ you’re using(in our case it is Android).
 
 ### Benefits
 
-* Parts of the code get decoupled, and easier to reuse and test.
+* Parts of the code get decoupled
+* Easier to reuse.
+* Easier to write unit-tests.
 * There’s a method to the madness. When someone else works on your code, 
   they can learn the app’s architecture and will understand it better.
   
