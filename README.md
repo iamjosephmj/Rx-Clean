@@ -64,4 +64,23 @@ it come to larger ones.
   <img src="https://github.com/iamjosephmj/Rx-Clean/blob/master/repo-res/images/clean-graph.png" />
 </p>
 
-You might have seen this graph before.
+You might have seen this graph before. The circles represent different levels of your app. There are 
+a couple of things that we should note:
+* The inner circle is the most abstract, and the outer circle is the most concrete. This is called the Abstraction Principle. 
+  This Abstraction Principle specifies that the inner circles should contain business logic, and outer circles should contain implementation details.
+  (I know this is boring to read this stuff now... but trust me you will get more clarity moving forward).
+* The Other principle of Clean Architecture is the Dependency Rule. This rule specifies, each circle can 
+  depend only on the nearest inward circle(This is the backbone of the architecture).
+
+The outer circle represents the concrete mechanisms that are specific to the platform such as networking 
+and database access. Moving inward, each circle is more abstract and higher-level. The center circle is the 
+most abstract and this is where we have our business logic, which doesn't rely on the platform or the framework
+you’re using(in our case it is Android).
+
+#### Benefits
+
+* Parts of the code get decoupled, and easier to reuse and test.
+* There’s a method to the madness. When someone else works on your code, 
+  they can learn the app’s architecture and will understand it better.
+  
+Before we dive in to the code, I would suggest you to read a bit about <a href= "https://en.wikipedia.org/wiki/SOLID">`SOLID`<\a> principles.
