@@ -23,5 +23,23 @@ In this tutorial, I will tke you through :
 
 The networking library is implemented with RxKotlin, please refer to <a style = "color: white" href ="https://github.com/iamjosephmj/learn-rx">`LearnRx`</a> to get a general understanding of 
 Reactive Programming.
-
 </p>
+
+## Table of contents
+
+* [Getting Started](#Getting-Started)
+
+## Getting Started
+
+When it comes to Android development, there has always been an open debate, on which architectural pattern to use. Since my early days of 
+Android development I got a feeling that thing weren't right the way they were setup, This is the case with more than 90% of developers, which 
+in turn; caused a lot of developers to struggle with the architecture in general.
+
+However, for quite a long time, there have been talks about writing your applications in a clean way. 
+Furthermore, one of the most influential persons in the global programmer community, 
+Robert C. Martin( aka Uncle Bob) has written a book, specifically on this topic(I personally suggest you guys to read it).
+
+Because the Clean architecture can be used in any application and platform, not just Android, 
+it’s very informative to understand the idea behind it, and why it’s a good solution, 
+for most problems we find nowadays, as programmers. With that in mind, in this tutorial, 
+you’ll learn how to use the Clean architecture pattern to build a `GitHubJobs` app, a simple app that displays jobs that are available in github and display that on a list.
