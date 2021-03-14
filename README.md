@@ -29,7 +29,7 @@ Reactive Programming.
 
 * [Getting Started](#Getting-Started)
 * [Clean Architecture](#Clean-Architecture)
-    * [Why is this important](#Why-is-this-important-?)
+    * [Why is this important](#Why-is-this-important-)
     * [The Approach](#The-Approach)
     * [Benefits](#Benefits)
 
