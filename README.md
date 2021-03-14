@@ -61,7 +61,7 @@ it come to larger ones.
 #### The Approach
 
 <p align="center">
-  <img height="500px" width="800px" src="https://github.com/iamjosephmj/Rx-Clean/blob/master/repo-res/images/clean-graph.png" />
+  <img src="https://github.com/iamjosephmj/Rx-Clean/blob/master/repo-res/images/clean-graph.png" />
 </p>
 
 You might have seen this graph before.
