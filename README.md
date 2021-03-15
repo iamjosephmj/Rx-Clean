@@ -36,6 +36,7 @@ Reactive Programming.
     * [Layers of Clean Architecture](#Layers-of-Clean-Architecture)
     * [Project Structure](#Project-Structure)
     * [The Data layer](#The-Data-layer)
+        * [Creating DataSource](#Creating-DataSource)
 
 ## Getting Started
 
@@ -160,5 +161,8 @@ Using the repository pattern is a good example of the `Dependency Inversion` Pri
 * The repository is an abstraction of Data Access and it does not depend on details.
   It depends on abstraction.
   
+Let's start by declaring repository.
+
+### Creating DataSource
 
 
