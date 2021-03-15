@@ -35,7 +35,7 @@ Reactive Programming.
     * [Dependencies](#Dependencies)
     * [Layers of Clean Architecture](#Layers-of-Clean-Architecture)
     * [Project Structure](#Project-Structure)
-    * [The Data](#The-Data-layer)
+    * [The Data layer](#The-Data-layer)
 
 ## Getting Started
 
