@@ -33,6 +33,8 @@ Reactive Programming.
     * [The Approach](#The-Approach)
     * [Benefits](#Benefits)
     * [Dependencies](#Dependencies)
+    * [Layers of Clean Architecture](#Layers-of-Clean-Architecture)
+    * [Project Structure](#Project-Structure)
 
 ## Getting Started
 
@@ -97,3 +99,27 @@ Before we dive in to the code, I would suggest you to read a bit about
 * <a href="https://github.com/sockeqwe/AdapterDelegates">`AdapterDelegates`</a>
 * <a href="https://github.com/ReactiveX/RxKotlin">`RxKotlin`</a>
 * <a href="https://developer.android.com/topic/libraries/architecture/viewmodel">`ViewModels`</a>
+
+### Layers of Clean Architecture
+
+There are different theories about layers of the clean architecture, the architecture is in such a way that it gives an abstract idea on which we 
+can adapt the number of layers to our needs. To keeps things much precise, we will use five layers:
+
+* Presentation: A layer that interacts with the UI.
+* Use cases: Sometimes called interactors. Defines actions the user can trigger.
+* Domain: Contains the business logic of the app.
+* Data: Abstract definition of all the data sources.
+* Framework: Implements interaction with the Android SDK and provides concrete implementations 
+  for the data layer.
+  
+### Project Structure
+
+We had pointed out the different layers of the clean, but it is important to know how to implement it. The project 
+is divided into two modules:
+
+* The existing app module.
+* A new core module that will hold all the code that doesn't depend on Android SDK.
+
+<p align="center">
+  <img src="https://github.com/iamjosephmj/Rx-Clean/blob/master/repo-res/images/moduleStructure.png" />
+</p>
