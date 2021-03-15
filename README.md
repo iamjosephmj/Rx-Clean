@@ -141,5 +141,24 @@ We will start from inner-most layers to the most concrete ones
 
 ### The Data layer
 
+This layer provides abstract definitions for accessing data sources like a database or the internet. 
+we’ll use Repository pattern in this layer. The main purpose of the repository pattern is to abstract
+away the concrete implementation of data access. To achieve this, you’ll add one
+interface and one class for each model:
+
+* `DataSource interface`: The interface that the Framework layer must implement.
+* `Repository class`: Provides methods for accessing the data that delegate to DataSource.
+
+<p align="center">
+  <img src="https://github.com/iamjosephmj/Rx-Clean/blob/master/repo-res/images/dataLayer.png" />
+</p>
+
+Using the repository pattern is a good example of the `Dependency Inversion` Principle because:
+
+* A Data layer which is of a higher, more abstract level.
+* Doesn't depend on a framework, lower-level layer.
+* The repository is an abstraction of Data Access and it does not depend on details.
+  It depends on abstraction.
+  
 
 
