@@ -50,7 +50,7 @@ Robert C. Martin( aka Uncle Bob) has written a book, specifically on this topic(
 Because the Clean architecture can be used in any application and platform, not just Android, 
 it’s very informative to understand the idea behind it, and why it’s a good solution, 
 for most problems we find nowadays, as programmers. With that in mind, in this tutorial, 
-you’ll learn how to use the Clean architecture pattern to build a <a href="https://jobs.github.com/positions">`GitHubJobs`</a> app, a simple app that displays jobs that are available in github and display that on a list.
+you’ll learn how to use the Clean architecture pattern to build a <a href="https://jobs.github.com/api">`GitHubJobs`</a> app, a simple app that displays jobs that are available in github and display that on a list.
 
 ## Clean Architecture
 
