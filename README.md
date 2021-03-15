@@ -123,3 +123,15 @@ is divided into two modules:
 <p align="center">
   <img src="https://github.com/iamjosephmj/Rx-Clean/blob/master/repo-res/images/moduleStructure.png" />
 </p>
+
+Follow these steps:
+
+* Create a module named "core".
+* Add core module to main app module as dependency.
+* create packages named
+  * data
+  * domain
+  * interactors
+  under the core module.
+    
+Now you are all set to go :)
