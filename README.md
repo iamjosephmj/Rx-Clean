@@ -185,5 +185,5 @@ From that, you can list the actions users should be able to perform:
 
 * Fetching jobs(based on <a href ="https://github.com/iamjosephmj/Rx-Clean/blob/master/core/src/main/java/io/iamjosephmj/core/data/models/SearchRequest.kt">`domain and page number`</a>) 
 
-Let's start creating use-case class. We are going to create the classes under <a href="">`interactors`</a> 
+Let's start creating use-case class. We are going to create the classes under <a href="https://github.com/iamjosephmj/Rx-Clean/tree/master/core/src/main/java/io/iamjosephmj/core/interactors">`interactors`</a> 
 
