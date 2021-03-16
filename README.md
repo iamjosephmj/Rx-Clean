@@ -37,6 +37,7 @@ Reactive Programming.
     * [Project Structure](#Project-Structure)
     * [The Data layer](#The-Data-layer)
         * [Creating DataSource](#Creating-DataSource)
+    * [The Use Cases Layer](#The-Use-Cases-Layer)
 
 ## Getting Started
 
@@ -163,7 +164,7 @@ Using the repository pattern is a good example of the `Dependency Inversion` Pri
   It depends on abstraction.
   
 
-### Creating DataSource
+#### Creating DataSource
 
 * you can see the abstract implementation of datasource in <a href = "https://github.com/iamjosephmj/Rx-Clean/blob/master/core/src/main/java/io/iamjosephmj/core/data/datasource/GitHubJobsDataSource.kt">`GitHubJobsDataSource`</a>.
 In a broader sense, this is the interface that the Framework layer must implement.
@@ -171,6 +172,17 @@ In a broader sense, this is the interface that the Framework layer must implemen
 * you can see the abstract implementation of data repository in <a href = "https://github.com/iamjosephmj/Rx-Clean/blob/master/core/src/main/java/io/iamjosephmj/core/data/repo/GitHubJobsRepository.kt">`GitHubJobsRepository`</a>.. The main purpose of the repository pattern is to abstract away 
   the concrete implementation of data access. 
 
+### The Use Cases Layer
 
+This layer is responsible to collect user actions and in-turn pass it to the inner layers.
+<br>
+Our application has two key functionalities:
+
+* Fetching the list from gitHub jobs url.
+* displaying it in a list view.
+
+From that, you can list the actions users should be able to perform:
+
+* Fetching jobs(based on <a href ="https://github.com/iamjosephmj/Rx-Clean/blob/master/core/src/main/java/io/iamjosephmj/core/data/models/SearchRequest.kt">`domain and page number`</a>) 
 
 
