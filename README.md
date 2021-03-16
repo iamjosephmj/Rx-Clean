@@ -187,3 +187,7 @@ From that, you can list the actions users should be able to perform:
 
 Let's start creating use-case class. We are going to create the classes under <a href="https://github.com/iamjosephmj/Rx-Clean/tree/master/core/src/main/java/io/iamjosephmj/core/interactors">`interactors`</a> 
 
+Each use case class has only one function that invokes the use case. For convenience, 
+you’re overloading the invoke operator. This enables you to simplify the function call on SearchForJobs 
+instance to SearchForJobs() instead of searchForJobs.invoke().
+

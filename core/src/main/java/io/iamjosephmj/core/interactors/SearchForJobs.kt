@@ -32,7 +32,7 @@ import io.reactivex.rxjava3.core.Single
 /**
  * This is the user action for fetching the jobs from github.
  */
-class FetchJobs(private val gitHubJobsRepository: GitHubJobsRepository) {
+class SearchForJobs(private val gitHubJobsRepository: GitHubJobsRepository) {
     operator fun invoke(searchRequest: SearchRequest): Single<List<GitHubJobDescription>> {
         return gitHubJobsRepository.searchJobs(searchRequest)
     }
