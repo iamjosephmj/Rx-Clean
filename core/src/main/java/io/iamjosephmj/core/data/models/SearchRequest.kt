@@ -22,7 +22,7 @@
 * SOFTWARE.
 *
 */
-package io.iamjosephmj.core.data.datasource
+package io.iamjosephmj.core.data.models
 
 data class SearchRequest(
     /* page number of the jobs api */

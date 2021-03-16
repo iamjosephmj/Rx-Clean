@@ -25,7 +25,7 @@
 package io.iamjosephmj.core.data.repo
 
 import io.iamjosephmj.core.data.datasource.GitHubJobsDataSource
-import io.iamjosephmj.core.data.datasource.SearchRequest
+import io.iamjosephmj.core.data.models.SearchRequest
 import io.iamjosephmj.core.data.models.GitHubJobDescription
 import io.reactivex.rxjava3.core.Single
 
