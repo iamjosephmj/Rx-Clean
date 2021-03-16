@@ -162,8 +162,15 @@ Using the repository pattern is a good example of the `Dependency Inversion` Pri
 * The repository is an abstraction of Data Access and it does not depend on details.
   It depends on abstraction.
   
-Let's start by declaring repository.
 
 ### Creating DataSource
+
+* you can see the abstract implementation of datasource in <a href = "https://github.com/iamjosephmj/Rx-Clean/blob/master/core/src/main/java/io/iamjosephmj/core/data/datasource/GitHubJobsDataSource.kt>`GitHubJobsDataSource`</a>.
+In a broader sense, this is the interface that the Framework layer must implement.
+
+* you can see the abstract implementation of data repository in <a href = "https://github.com/iamjosephmj/Rx-Clean/blob/master/core/src/main/java/io/iamjosephmj/core/data/repo/GitHubJobsRepository.kt>`GitHubJobsRepository`</a>.. The main purpose of the repository pattern is to abstract away 
+  the concrete implementation of data access. 
+
+
 
 
