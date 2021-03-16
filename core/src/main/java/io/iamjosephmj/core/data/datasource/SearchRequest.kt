@@ -25,6 +25,8 @@
 package io.iamjosephmj.core.data.datasource
 
 data class SearchRequest(
+    /* page number of the jobs api */
     val page: Int,
+    /* domain name of the job */
     val domain: String
 )
