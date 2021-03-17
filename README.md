@@ -38,6 +38,7 @@ Reactive Programming.
     * [The Data layer](#The-Data-layer)
         * [Creating DataSource](#Creating-DataSource)
     * [The Use Cases Layer](#The-Use-Cases-Layer)
+    * [Framework Layer](#Framework-Layer)
 
 ## Getting Started
 
@@ -190,4 +191,11 @@ Let's start creating use-case class. We are going to create the classes under <a
 Each use case class has only one function that invokes the use case. For convenience, 
 you’re overloading the invoke operator. This enables you to simplify the function call on SearchForJobs 
 instance to SearchForJobs() instead of searchForJobs.invoke().
+
+### Framework Layer
+
+By this, we come to the end of the three inner layers of the core module. We can now take a look at 
+Framework layer. The Framework layer holds implementations of interfaces defined in the Data layer.
+Our next job is to provide implementations of Data source interfaces from the Data layer.
+
 

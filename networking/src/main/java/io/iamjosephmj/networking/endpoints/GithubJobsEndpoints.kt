@@ -2,7 +2,7 @@
 * MIT License
 *
 * Copyright (c) 2021 Joseph James
-* 
+*
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
 * in the Software without restriction, including without limitation the rights
@@ -22,15 +22,14 @@
 * SOFTWARE.
 *
 */
-package io.iamjosephmj.core.data.datasource
 
-import io.iamjosephmj.core.data.models.GitHubJobDescription
-import io.iamjosephmj.core.data.models.SearchRequest
-import io.reactivex.Single
+package io.iamjosephmj.networking.endpoints
 
-interface GitHubJobsDataSource {
-    /**
-     * This method is used to fetch a paginated list of jobs posted in github
-     */
-    fun searchJobs(searchRequest: SearchRequest): Single<List<GitHubJobDescription>>
+/**
+ * This class contains endpoints for fetching the jobs.
+ */
+object GithubJobsEndpoints {
+    const val JOBS_ENDPOINT = "/positions.json"
+    const val JOBS_ENDPOINT_KEY_DOMAIN = "search"
+    const val JOBS_ENDPOINT_KEY_PAGE = "page"
 }

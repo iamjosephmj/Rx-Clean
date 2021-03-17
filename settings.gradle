@@ -9,3 +9,5 @@ dependencyResolutionManagement {
 rootProject.name = "clean"
 include ':app'
 include ':core'
+include ':networking'
+include ':presentation'

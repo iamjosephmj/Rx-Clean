@@ -2,7 +2,7 @@
 * MIT License
 *
 * Copyright (c) 2021 Joseph James
-* 
+*
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
 * in the Software without restriction, including without limitation the rights
@@ -22,15 +22,26 @@
 * SOFTWARE.
 *
 */
-package io.iamjosephmj.core.data.datasource
+
+package io.iamjosephmj.networking.service
 
 import io.iamjosephmj.core.data.models.GitHubJobDescription
 import io.iamjosephmj.core.data.models.SearchRequest
+import io.iamjosephmj.networking.service.base.RetrofitService
+import io.iamjosephmj.networking.service.interfaces.GithubJobAPIInterface
 import io.reactivex.Single
+import retrofit2.Response
 
-interface GitHubJobsDataSource {
-    /**
-     * This method is used to fetch a paginated list of jobs posted in github
-     */
-    fun searchJobs(searchRequest: SearchRequest): Single<List<GitHubJobDescription>>
+/**
+ * This is the API service class.
+ */
+class GitHubJobAPIService(private val retrofitService: RetrofitService) {
+
+    private val githubJobAPIInterface: GithubJobAPIInterface =
+        retrofitService.createService(GithubJobAPIInterface::class.java)
+
+    fun fetchJobs(jobRequest: SearchRequest): Single<Response<List<GitHubJobDescription>>> {
+        return githubJobAPIInterface.fetchJob(jobRequest.page, jobRequest.domain)
+    }
+
 }

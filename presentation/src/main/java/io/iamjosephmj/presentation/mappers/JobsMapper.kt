@@ -2,7 +2,7 @@
 * MIT License
 *
 * Copyright (c) 2021 Joseph James
-* 
+*
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
 * in the Software without restriction, including without limitation the rights
@@ -22,15 +22,28 @@
 * SOFTWARE.
 *
 */
-package io.iamjosephmj.core.data.datasource
+
+package io.iamjosephmj.presentation.mappers
 
 import io.iamjosephmj.core.data.models.GitHubJobDescription
-import io.iamjosephmj.core.data.models.SearchRequest
-import io.reactivex.Single
+import io.reactivex.functions.Function
+import retrofit2.Response
 
-interface GitHubJobsDataSource {
-    /**
-     * This method is used to fetch a paginated list of jobs posted in github
-     */
-    fun searchJobs(searchRequest: SearchRequest): Single<List<GitHubJobDescription>>
+/**
+ * This is a mapper class for the job response
+ */
+class JobsMapper :
+    Function<Response<List<GitHubJobDescription>>, List<GitHubJobDescription>> {
+
+    override fun apply(response: Response<List<GitHubJobDescription>>): List<GitHubJobDescription> {
+        val body = response.body()
+        // returns empty object if there is no data/error.
+        return if (response.code() == 200 && body != null) {
+            body
+        } else {
+            ArrayList()
+        }
+    }
+
+
 }

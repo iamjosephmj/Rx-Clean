@@ -25,9 +25,9 @@
 package io.iamjosephmj.core.data.repo
 
 import io.iamjosephmj.core.data.datasource.GitHubJobsDataSource
-import io.iamjosephmj.core.data.models.SearchRequest
 import io.iamjosephmj.core.data.models.GitHubJobDescription
-import io.reactivex.rxjava3.core.Single
+import io.iamjosephmj.core.data.models.SearchRequest
+import io.reactivex.Single
 
 /**
  *  Provides methods for accessing the data that delegate to {@link GitHubJobsDataSource}
@@ -37,6 +37,6 @@ class GitHubJobsRepository(private val gitHubJobsDataSource: GitHubJobsDataSourc
      * Refer to the data source implementation.
      */
     fun searchJobs(searchRequest: SearchRequest): Single<List<GitHubJobDescription>> {
-        return gitHubJobsDataSource.searchJobs(searchRequest.domain, searchRequest.page)
+        return gitHubJobsDataSource.searchJobs(searchRequest)
     }
 }
