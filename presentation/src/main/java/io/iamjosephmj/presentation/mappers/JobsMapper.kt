@@ -25,7 +25,7 @@
 
 package io.iamjosephmj.presentation.mappers
 
-import io.iamjosephmj.core.data.models.GitHubJobDescription
+import io.iamjosephmj.core.domain.GitHubJobDescription
 import io.reactivex.functions.Function
 import retrofit2.Response
 

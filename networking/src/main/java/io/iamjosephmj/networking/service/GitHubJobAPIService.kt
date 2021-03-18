@@ -25,8 +25,8 @@
 
 package io.iamjosephmj.networking.service
 
-import io.iamjosephmj.core.data.models.GitHubJobDescription
-import io.iamjosephmj.core.data.models.SearchRequest
+import io.iamjosephmj.core.domain.GitHubJobDescription
+import io.iamjosephmj.core.domain.SearchRequest
 import io.iamjosephmj.networking.service.base.RetrofitService
 import io.iamjosephmj.networking.service.interfaces.GithubJobAPIInterface
 import io.reactivex.Single

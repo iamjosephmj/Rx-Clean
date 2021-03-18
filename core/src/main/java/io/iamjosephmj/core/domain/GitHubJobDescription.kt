@@ -22,7 +22,7 @@
 * SOFTWARE.
 *
 */
-package io.iamjosephmj.core.data.models
+package io.iamjosephmj.core.domain
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

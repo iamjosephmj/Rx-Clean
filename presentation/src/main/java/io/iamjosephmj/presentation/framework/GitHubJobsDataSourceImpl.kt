@@ -26,8 +26,8 @@
 package io.iamjosephmj.presentation.framework
 
 import io.iamjosephmj.core.data.datasource.GitHubJobsDataSource
-import io.iamjosephmj.core.data.models.GitHubJobDescription
-import io.iamjosephmj.core.data.models.SearchRequest
+import io.iamjosephmj.core.domain.GitHubJobDescription
+import io.iamjosephmj.core.domain.SearchRequest
 import io.iamjosephmj.networking.service.GitHubJobAPIService
 import io.iamjosephmj.presentation.mappers.JobsMapper
 import io.reactivex.Single

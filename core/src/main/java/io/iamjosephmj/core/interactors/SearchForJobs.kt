@@ -24,8 +24,8 @@
 */
 package io.iamjosephmj.core.interactors
 
-import io.iamjosephmj.core.data.models.GitHubJobDescription
-import io.iamjosephmj.core.data.models.SearchRequest
+import io.iamjosephmj.core.domain.GitHubJobDescription
+import io.iamjosephmj.core.domain.SearchRequest
 import io.iamjosephmj.core.data.repo.GitHubJobsRepository
 import io.reactivex.Single
 

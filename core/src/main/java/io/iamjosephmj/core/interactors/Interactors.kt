@@ -22,11 +22,12 @@
 * SOFTWARE.
 *
 */
-package io.iamjosephmj.core.data.models
+package io.iamjosephmj.core.interactors
 
-data class SearchRequest(
-    /* page number of the jobs api */
-    val page: Int,
-    /* domain name of the job */
-    val domain: String
+/**
+ * This class is for providing sources. This will specifically be useful at the time of DI as
+ * I mentioned in the doc.
+ */
+data class Interactors(
+    val searchForJobs: SearchForJobs
 )

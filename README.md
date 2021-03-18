@@ -39,6 +39,8 @@ Reactive Programming.
         * [Creating DataSource](#Creating-DataSource)
     * [The Use Cases Layer](#The-Use-Cases-Layer)
     * [Framework Layer](#Framework-Layer)
+    * [Presentation Layer](#Presentation-Layer)
+    * [Sources Implementation](#Sources-Implementation)
 
 ## Getting Started
 
@@ -188,7 +190,7 @@ From that, you can list the actions users should be able to perform:
 
 Let's start creating use-case class. We are going to create the classes under <a href="https://github.com/iamjosephmj/Rx-Clean/tree/master/core/src/main/java/io/iamjosephmj/core/interactors">`interactors`</a> 
 
-Each use case class has only one function that invokes the use case. For convenience, 
+Each of the use cases class has only one function that invokes the use case. For convenience, 
 you’re overloading the invoke operator. This enables you to simplify the function call on SearchForJobs 
 instance to SearchForJobs() instead of searchForJobs.invoke().
 
@@ -198,4 +200,48 @@ By this, we come to the end of the three inner layers of the core module. We can
 Framework layer. The Framework layer holds implementations of interfaces defined in the Data layer.
 Our next job is to provide implementations of Data source interfaces from the Data layer.
 
+* <a href="https://github.com/iamjosephmj/Rx-Clean/blob/master/presentation/src/main/java/io/iamjosephmj/presentation/framework/GitHubJobsDataSourceImpl.kt">`GitHubJobsDataSourceImpl.kt`</a>
 
+Now we are all set, let's connect all the dots and display the data.
+
+### Presentation Layer
+
+Presentation layer contains the UI related code. This layer is in the same circle as the framework 
+layer, so we can depend on its classes. 
+
+### Architecture
+
+For this projects, we ar going to use MVVM pattern as it is supported by <a href = "https://developer.android.com/topic/libraries/architecture">`Android Jetpack`</a>. 
+I cannot specifically say that MVVM is the best suite for this project, as there are many other cool architectural 
+patterns like MVP, MVI, VIPER, MvRx...etc.. and I don't really want to do a comparison of design patterns here... that's something for some other day. 
+To stay in the context of our project lets stick on to MVVM.
+
+This is how we are going to implement MVVM:
+
+<p align="center">
+  <img src="https://github.com/iamjosephmj/Rx-Clean/blob/master/repo-res/images/mvvm.png" />
+</p>
+
+MVVM pattern consists of three components:
+
+* View: responsible for rendering the UI.
+* Model: Contains business logic and data.
+* ViewModel: Acts as a bridge between data and UI.
+
+While we are speaking in terms of Clean Architecture, instead of relying on Models, you’ll communicate 
+with Interactors from the Use Case layer.
+
+<p align="center">
+  <img src="https://github.com/iamjosephmj/Rx-Clean/blob/master/repo-res/images/clean-mvvm.png" />
+</p>
+
+Yep! This is the last piece of our puzzle :)
+
+### Sources Implementation
+
+Before moving on to implementing the presentation layer, we will need to provide the Data sources 
+to the data layer. You should usually do this using dependency injection. It is the process of 
+separating provider functions or factories for dependencies, and their usage. This makes your classes 
+cleaner, as they don’t create dependencies in their constructors.
+
+we are going to <a href="https://dagger.dev/dev-guide/">`dagger2`</a> for DI.

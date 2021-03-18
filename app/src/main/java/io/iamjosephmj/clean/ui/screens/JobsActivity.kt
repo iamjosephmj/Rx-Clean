@@ -1,10 +1,11 @@
-package io.iamjosephmj.clean
+package io.iamjosephmj.clean.ui.screens
 
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import io.iamjosephmj.core.data.models.SearchRequest
+import io.iamjosephmj.clean.R
+import io.iamjosephmj.core.domain.SearchRequest
 import io.iamjosephmj.core.data.repo.GitHubJobsRepository
 import io.iamjosephmj.core.interactors.SearchForJobs
 import io.iamjosephmj.networking.service.GitHubJobAPIService
@@ -16,7 +17,7 @@ import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
 
 
-class MainActivity : AppCompatActivity() {
+class JobsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
