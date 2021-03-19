@@ -23,12 +23,20 @@
 *
 */
 
-package io.iamjosephmj.core.interactors
+package io.iamjosephmj.clean.di.component
 
-/**
- * This class is for providing sources. This will specifically be useful at the time of DI as
- * I mentioned in the doc.
- */
-data class Interactors(
-    val searchForJobs: SearchForJobs
+import dagger.Component
+import io.iamjosephmj.clean.di.ViewModelScope
+import io.iamjosephmj.clean.di.module.ViewModelModule
+import io.iamjosephmj.clean.ui.viewmodels.JobsViewModel
+
+@ViewModelScope
+@Component(
+    dependencies = [ApplicationComponent::class],
+    modules = [ViewModelModule::class]
 )
+interface ViewModelComponent {
+
+    fun inject(viewModel: JobsViewModel)
+
+}

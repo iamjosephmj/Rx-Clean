@@ -23,12 +23,40 @@
 *
 */
 
-package io.iamjosephmj.core.interactors
+package io.iamjosephmj.clean.application
+
+import android.app.Application
+import io.iamjosephmj.clean.di.component.ApplicationComponent
+import io.iamjosephmj.clean.di.component.DaggerApplicationComponent
+import io.iamjosephmj.clean.di.module.ApplicationModule
 
 /**
- * This class is for providing sources. This will specifically be useful at the time of DI as
- * I mentioned in the doc.
+ * This is the application class, helps us to do DI.
+ *
  */
-data class Interactors(
-    val searchForJobs: SearchForJobs
-)
+class RxCleanApplication : Application() {
+
+    companion object {
+        lateinit var instance: RxCleanApplication
+    }
+
+    lateinit var applicationComponent: ApplicationComponent
+
+    override fun onCreate() {
+        super.onCreate()
+        instance = this
+        injectDependencies()
+    }
+
+    /**
+     * Application level DI
+     */
+    private fun injectDependencies() {
+        applicationComponent = DaggerApplicationComponent
+            .builder()
+            .applicationModule(ApplicationModule(this))
+            .build()
+        applicationComponent.inject(this)
+    }
+
+}

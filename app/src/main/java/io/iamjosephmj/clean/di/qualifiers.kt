@@ -23,12 +23,10 @@
 *
 */
 
-package io.iamjosephmj.core.interactors
+package io.iamjosephmj.clean.di
 
-/**
- * This class is for providing sources. This will specifically be useful at the time of DI as
- * I mentioned in the doc.
- */
-data class Interactors(
-    val searchForJobs: SearchForJobs
-)
+import javax.inject.Qualifier
+
+@Qualifier
+@Retention(AnnotationRetention.SOURCE)
+annotation class ApplicationContext

@@ -23,12 +23,24 @@
 *
 */
 
-package io.iamjosephmj.core.interactors
+package io.iamjosephmj.clean.di.module
 
-/**
- * This class is for providing sources. This will specifically be useful at the time of DI as
- * I mentioned in the doc.
- */
-data class Interactors(
-    val searchForJobs: SearchForJobs
-)
+import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import dagger.Module
+import dagger.Provides
+import io.iamjosephmj.clean.ui.base.BaseActivity
+import io.iamjosephmj.clean.ui.viewmodels.JobsViewModel
+
+@Module
+class ActivityModule(private val activity: BaseActivity<*>) {
+
+    @Provides
+    fun provideLinearLayoutManager(): LinearLayoutManager = LinearLayoutManager(activity)
+
+    @Provides
+    fun providesJobsViewModel(): JobsViewModel {
+        return ViewModelProviders.of(activity).get(JobsViewModel::class.java)
+    }
+
+}

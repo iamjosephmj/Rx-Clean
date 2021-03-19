@@ -44,7 +44,7 @@ class RetrofitService {
     /**
      * Initialize{@link Moshi}and{@link Retrofit}
      */
-    fun init(context: Context?) {
+    fun init(context: Context?): RetrofitService {
         val httpClientBuilder = OkHttpClient.Builder()
             .connectTimeout(30, TimeUnit.SECONDS) // Modify as necessary
 
@@ -64,6 +64,7 @@ class RetrofitService {
             .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
             .client(httpClientBuilder.build())
             .build()
+        return this
     }
 
     /**

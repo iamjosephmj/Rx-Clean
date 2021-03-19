@@ -23,12 +23,20 @@
 *
 */
 
-package io.iamjosephmj.core.interactors
+package io.iamjosephmj.clean.di.component
 
-/**
- * This class is for providing sources. This will specifically be useful at the time of DI as
- * I mentioned in the doc.
- */
-data class Interactors(
-    val searchForJobs: SearchForJobs
+import io.iamjosephmj.clean.di.ActivityScope
+import io.iamjosephmj.clean.di.module.ActivityModule
+import dagger.Component
+import io.iamjosephmj.clean.ui.screens.JobsActivity
+
+@ActivityScope
+@Component(
+    dependencies = [ApplicationComponent::class],
+    modules = [ActivityModule::class]
 )
+interface ActivityComponent {
+
+    fun inject(activity: JobsActivity)
+
+}

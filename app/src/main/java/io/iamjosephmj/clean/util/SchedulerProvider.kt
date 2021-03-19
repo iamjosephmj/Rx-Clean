@@ -23,12 +23,15 @@
 *
 */
 
-package io.iamjosephmj.core.interactors
+package io.iamjosephmj.clean.util
 
-/**
- * This class is for providing sources. This will specifically be useful at the time of DI as
- * I mentioned in the doc.
- */
-data class Interactors(
-    val searchForJobs: SearchForJobs
-)
+import io.reactivex.Scheduler
+
+interface SchedulerProvider {
+
+    fun computation(): Scheduler
+
+    fun io(): Scheduler
+
+    fun ui(): Scheduler
+}

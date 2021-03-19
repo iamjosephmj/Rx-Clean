@@ -23,12 +23,37 @@
 *
 */
 
-package io.iamjosephmj.core.interactors
+package io.iamjosephmj.clean.di.component
 
-/**
- * This class is for providing sources. This will specifically be useful at the time of DI as
- * I mentioned in the doc.
- */
-data class Interactors(
-    val searchForJobs: SearchForJobs
-)
+import android.app.Application
+import android.content.Context
+import dagger.Component
+import io.iamjosephmj.clean.application.RxCleanApplication
+import io.iamjosephmj.clean.di.ApplicationContext
+import io.iamjosephmj.clean.di.module.ApplicationModule
+import io.iamjosephmj.clean.util.SchedulerProvider
+import io.iamjosephmj.core.data.repo.GitHubJobsRepository
+import io.iamjosephmj.core.interactors.Interactors
+import io.reactivex.disposables.CompositeDisposable
+import javax.inject.Singleton
+
+
+@Singleton
+@Component(modules = [ApplicationModule::class])
+interface ApplicationComponent {
+
+    fun inject(app: RxCleanApplication)
+
+    fun getApplication(): Application
+
+    @ApplicationContext
+    fun getContext(): Context
+
+    fun getSchedulerProvider(): SchedulerProvider
+
+    fun getGitHubJobsRepository(): GitHubJobsRepository
+
+    fun getCompositeDisposable(): CompositeDisposable
+
+    fun getJobsInteractor(): Interactors
+}

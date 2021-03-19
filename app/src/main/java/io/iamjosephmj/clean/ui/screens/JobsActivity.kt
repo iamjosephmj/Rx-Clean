@@ -1,49 +1,50 @@
+/*
+* MIT License
+*
+* Copyright (c) 2021 Joseph James
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*
+*/
+
 package io.iamjosephmj.clean.ui.screens
 
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import io.iamjosephmj.clean.R
-import io.iamjosephmj.core.domain.SearchRequest
-import io.iamjosephmj.core.data.repo.GitHubJobsRepository
-import io.iamjosephmj.core.interactors.SearchForJobs
-import io.iamjosephmj.networking.service.GitHubJobAPIService
-import io.iamjosephmj.networking.service.base.RetrofitService
-import io.iamjosephmj.presentation.framework.GitHubJobsDataSourceImpl
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.rxkotlin.subscribeBy
-import io.reactivex.schedulers.Schedulers
+import io.iamjosephmj.clean.di.component.ActivityComponent
+import io.iamjosephmj.clean.ui.base.BaseActivity
+import io.iamjosephmj.clean.ui.viewmodels.JobsViewModel
 
+/**
+ * This is the Activity that displays the list of jobs.
+ */
+class JobsActivity : BaseActivity<JobsViewModel>() {
 
-class JobsActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+    override fun provideLayoutId(): Int = R.layout.activity_main
 
-        val disposable = CompositeDisposable()
-
-        val retro = RetrofitService()
-        retro.init(this)
-        val serv = GitHubJobAPIService(retro)
-        val impl = GitHubJobsDataSourceImpl(serv)
-        val req = SearchRequest(1, "android")
-        val repo = GitHubJobsRepository(impl)
-
-
-        disposable.add(
-            SearchForJobs(repo).invoke(req)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeBy(
-                    onSuccess = { result ->
-                        Toast.makeText(this, result.joinToString { " " }, Toast.LENGTH_SHORT).show()
-                    },
-                    onError = {
-                        Log.e("error is", it.message.toString())
-                    }
-                )
-        )
+    override fun injectDependencies(activityComponent: ActivityComponent) {
+        activityComponent.inject(this)
     }
+
+    override fun setupView(savedInstanceState: Bundle?) {
+
+    }
+
+
 }
