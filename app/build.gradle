@@ -15,8 +15,6 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -40,7 +38,12 @@ android {
 }
 
 dependencies {
-    def lifecycle_version = "2.0.0"
+
+    def appDependencies = rootProject.ext.appDependencies
+
+    def coreDependencies = rootProject.ext.coreDependencies
+
+    def uiDependencies = rootProject.ext.uiDependencies
 
     implementation project(':presentation')
 
@@ -48,30 +51,19 @@ dependencies {
 
     implementation project(':networking')
 
-    implementation 'io.reactivex.rxjava2:rxkotlin:2.4.0'
+    implementation coreDependencies.rxKotlin
+    implementation coreDependencies.rxJava
+    implementation coreDependencies.ktx
 
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation appDependencies.lifecycleExt
+    implementation appDependencies.adapterDelegate
+    implementation appDependencies.lottie
+    implementation appDependencies.glide
+    implementation appDependencies.spruce
+    implementation appDependencies.dagger
+    kapt appDependencies.daggerCompiler
 
-    // ViewModel and LiveData
-    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
-
-    implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl-layoutcontainer:4.3.0'
-
-    implementation 'com.airbnb.android:lottie:3.6.1'
-
-    implementation 'com.willowtreeapps.spruce:spruce-android:1.1.0'
-
-    implementation 'com.github.bumptech.glide:glide:4.12.0'
-
-    // Dagger
-    implementation 'com.google.dagger:dagger:2.21'
-    kapt 'com.google.dagger:dagger-compiler:2.21'
-
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.3.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation coreDependencies.appCompat
+    implementation uiDependencies.material
+    implementation uiDependencies.constraintlayout
 }

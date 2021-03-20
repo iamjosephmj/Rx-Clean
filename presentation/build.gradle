@@ -12,8 +12,6 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
 
@@ -34,6 +32,9 @@ android {
 
 dependencies {
 
+    def networkDependencies = rootProject.ext.networkDependencies
+
+    def coreDependencies = rootProject.ext.coreDependencies
 
     // adding core module to the main project.
     implementation project(':core')
@@ -41,16 +42,10 @@ dependencies {
     // adding networking module to the main project.
     implementation project(':networking')
 
-    // RxJava 3
-    implementation 'io.reactivex.rxjava2:rxkotlin:2.4.0'
+    implementation coreDependencies.rxKotlin
+    implementation coreDependencies.ktx
 
     // retrofit dependencies
-    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation networkDependencies.retrofit
 
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.3.0'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
