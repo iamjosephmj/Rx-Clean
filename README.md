@@ -41,6 +41,7 @@ Reactive Programming.
     * [Framework Layer](#Framework-Layer)
     * [Presentation Layer](#Presentation-Layer)
     * [Sources Implementation](#Sources-Implementation)
+    * [Dependency Injection](#Dependency-Injection)
 
 ## Getting Started
 
@@ -244,6 +245,8 @@ to the data layer. You should usually do this using dependency injection. It is 
 separating provider functions or factories for dependencies, and their usage. This makes your classes 
 cleaner, as they don’t create dependencies in their constructors.
 
+### Dependency Injection
+
 I had implemented <a href="https://dagger.dev/dev-guide/">`dagger2`</a> for dependency management. You can go through 
 these class to know how I categorized application and presentation layer dependencies
 
@@ -252,3 +255,4 @@ these class to know how I categorized application and presentation layer depende
 * Presentation Level <a href="https://github.com/iamjosephmj/Rx-Clean/blob/master/app/src/main/java/io/iamjosephmj/clean/di/component/ViewModelComponent.kt">`ViewModelComponent`</a> - <a href="https://github.com/iamjosephmj/Rx-Clean/blob/master/app/src/main/java/io/iamjosephmj/clean/di/module/ViewModelModule.kt">`ViewModel Module`</a>
 
 note: feel free to change it to your own implementations.
+
