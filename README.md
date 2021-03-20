@@ -12,7 +12,7 @@ I hope you all are going well. Are you looking for a sound architectural pattern
 complexity of your project? Have you heard of the Clean Architecture but don't know what all the fuzz is about? You are in the 
 right place. 
 <br>
-In this tutorial, I will tke you through :
+In this tutorial, I will take you through :
 
 * What Clean Architecture is
 * Why it’s important to use architecture patterns in software
