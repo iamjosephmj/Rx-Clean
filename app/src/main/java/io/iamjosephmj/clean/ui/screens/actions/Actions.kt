@@ -23,28 +23,11 @@
 *
 */
 
-package io.iamjosephmj.clean.di.module
+package io.iamjosephmj.clean.ui.screens.actions
 
-import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.willowtreeapps.spruce.Spruce
-import com.willowtreeapps.spruce.animation.DefaultAnimations
-import com.willowtreeapps.spruce.sort.LinearSort
-import dagger.Module
-import dagger.Provides
-import io.iamjosephmj.clean.di.ActivityScope
-import io.iamjosephmj.clean.ui.base.BaseActivity
-import io.iamjosephmj.clean.ui.viewmodels.JobsViewModel
-import kotlinx.android.synthetic.main.activity_main.*
-
-@Module
-class ActivityModule(private val activity: BaseActivity<*>) {
-
-    @ActivityScope
-    @Provides
-    fun providesJobsViewModel(): JobsViewModel {
-        return ViewModelProviders.of(activity).get(JobsViewModel::class.java)
-    }
-
+/**
+ * This enum is for distinguishing actions in UI.
+ */
+enum class Actions {
+    LOADING, ERROR, SUCCESS
 }

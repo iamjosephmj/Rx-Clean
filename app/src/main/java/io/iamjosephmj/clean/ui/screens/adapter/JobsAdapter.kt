@@ -23,28 +23,22 @@
 *
 */
 
-package io.iamjosephmj.clean.di.module
+package io.iamjosephmj.clean.ui.screens.adapter
 
-import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.willowtreeapps.spruce.Spruce
-import com.willowtreeapps.spruce.animation.DefaultAnimations
-import com.willowtreeapps.spruce.sort.LinearSort
-import dagger.Module
-import dagger.Provides
-import io.iamjosephmj.clean.di.ActivityScope
-import io.iamjosephmj.clean.ui.base.BaseActivity
-import io.iamjosephmj.clean.ui.viewmodels.JobsViewModel
-import kotlinx.android.synthetic.main.activity_main.*
+import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
+import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegate
+import io.iamjosephmj.clean.R
+import io.iamjosephmj.core.domain.DisplayableItem
+import io.iamjosephmj.core.domain.GitHubJobDescription
 
-@Module
-class ActivityModule(private val activity: BaseActivity<*>) {
 
-    @ActivityScope
-    @Provides
-    fun providesJobsViewModel(): JobsViewModel {
-        return ViewModelProviders.of(activity).get(JobsViewModel::class.java)
+val jobsAdapter = ListDelegationAdapter(
+    jobsAdapterDelegate()
+)
+
+fun jobsAdapterDelegate() =
+    adapterDelegate<GitHubJobDescription, DisplayableItem>(R.layout.item_job) {
+        //TODO:
+        bind { diffPayloads -> // diffPayloads is a List<Any> containing the Payload from your DiffUtils
+        }
     }
-
-}

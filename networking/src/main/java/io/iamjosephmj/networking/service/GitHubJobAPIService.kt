@@ -35,7 +35,7 @@ import retrofit2.Response
 /**
  * This is the API service class.
  */
-class GitHubJobAPIService(private val retrofitService: RetrofitService) {
+class GitHubJobAPIService(retrofitService: RetrofitService) {
 
     private val githubJobAPIInterface: GithubJobAPIInterface =
         retrofitService.createService(GithubJobAPIInterface::class.java)

@@ -25,11 +25,10 @@
 
 package io.iamjosephmj.clean.ui.viewmodels
 
-import android.util.Log
-import android.widget.Toast
-import io.iamjosephmj.clean.application.RxCleanApplication
 import io.iamjosephmj.clean.di.component.ViewModelComponent
 import io.iamjosephmj.clean.ui.base.BaseViewModel
+import io.iamjosephmj.clean.ui.screens.actions.Actions
+import io.iamjosephmj.clean.ui.screens.actions.JobsLiveData
 import io.iamjosephmj.clean.util.SchedulerProvider
 import io.iamjosephmj.core.data.repo.GitHubJobsRepository
 import io.iamjosephmj.core.domain.SearchRequest
@@ -51,6 +50,9 @@ class JobsViewModel : BaseViewModel() {
     @Inject
     lateinit var schedulerProvider: SchedulerProvider
 
+    @Inject
+    lateinit var jobsLiveData: JobsLiveData
+
     override fun injectDependencies(viewModelComponent: ViewModelComponent) {
         viewModelComponent.inject(this)
     }
@@ -62,19 +64,18 @@ class JobsViewModel : BaseViewModel() {
     private fun startApiCall() {
         val req = SearchRequest(1, "android")
         compositeDisposable.add(
-            interactor.searchForJobs.invoke(req)
+            interactor.searchForJobs(req)
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
                 .subscribeBy(
                     onSuccess = { result ->
-                        Toast.makeText(
-                            RxCleanApplication.instance,
-                            result.joinToString { " " },
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        jobsLiveData.type = Actions.SUCCESS
+                        jobsLiveData.data = result
+                        jobsLiveData.value = jobsLiveData
                     },
                     onError = {
-                        Log.e("error is", it.message.toString())
+                        jobsLiveData.type = Actions.ERROR
+                        jobsLiveData.value = jobsLiveData
                     }
                 )
         )

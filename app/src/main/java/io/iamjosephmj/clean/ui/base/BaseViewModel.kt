@@ -48,16 +48,15 @@ abstract class BaseViewModel : ViewModel() {
     }
 
     init {
-        onCreate()
+        injectDependencies()
     }
 
     //Dependency injection
     protected abstract fun injectDependencies(viewModelComponent: ViewModelComponent)
 
 
-    private fun onCreate() {
+    private fun injectDependencies() {
         injectDependencies(buildActivityComponent())
-        onStart()
     }
 
     /**

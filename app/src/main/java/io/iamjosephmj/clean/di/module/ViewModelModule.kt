@@ -26,6 +26,14 @@
 package io.iamjosephmj.clean.di.module
 
 import dagger.Module
+import dagger.Provides
+import io.iamjosephmj.clean.ui.screens.actions.JobsLiveData
 
 @Module
-class ViewModelModule
+class ViewModelModule {
+
+    @Provides
+    fun providesJobsLiveData(): JobsLiveData {
+        return JobsLiveData()
+    }
+}

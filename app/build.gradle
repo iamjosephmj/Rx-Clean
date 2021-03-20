@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
 }
 
 android {
@@ -28,6 +29,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    androidExtensions {
+        experimental = true
+    }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
@@ -48,6 +54,12 @@ dependencies {
 
     // ViewModel and LiveData
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+
+    implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl:4.3.0'
+
+    implementation 'com.airbnb.android:lottie:3.6.1'
+
+    implementation 'com.willowtreeapps.spruce:spruce-android:1.1.0'
 
     // Dagger
     implementation 'com.google.dagger:dagger:2.21'

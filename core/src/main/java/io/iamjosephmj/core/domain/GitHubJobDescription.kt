@@ -40,4 +40,4 @@ data class GitHubJobDescription(
     @Json(name = "description") val description: String? = "",
     @Json(name = "how_to_apply") val how_to_apply: String? = "",
     @Json(name = "company_logo") val company_logo: String? = "",
-)
+) : DisplayableItem
