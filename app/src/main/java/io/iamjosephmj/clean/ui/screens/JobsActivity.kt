@@ -49,6 +49,8 @@ class JobsActivity : BaseActivity<JobsViewModel>() {
 
     lateinit var animationBuilder: SpruceBuilder
 
+    var animateList = true
+
     override fun provideLayoutId(): Int = R.layout.activity_main
 
     override fun injectDependencies(activityComponent: ActivityComponent) {
@@ -70,8 +72,10 @@ class JobsActivity : BaseActivity<JobsViewModel>() {
                         LinearSort.Direction.TOP_TO_BOTTOM
                     )
                 )
-                .animateWith(DefaultAnimations.dynamicTranslationUpwards(jobsRecyclerView),
-                    DefaultAnimations.dynamicFadeIn(jobsRecyclerView))
+                .animateWith(
+                    DefaultAnimations.dynamicTranslationUpwards(jobsRecyclerView),
+                    DefaultAnimations.dynamicFadeIn(jobsRecyclerView)
+                )
     }
 
     /**
@@ -114,8 +118,10 @@ class JobsActivity : BaseActivity<JobsViewModel>() {
                 state: RecyclerView.State
             ) {
                 super.onLayoutChildren(recycler, state)
-                if (jobsRecyclerView.childCount > 0)
+                if (jobsRecyclerView.childCount > 0 && animateList) {
                     animationBuilder.start()
+                    animateList = false
+                }
             }
         }
         jobsRecyclerView.adapter = jobsAdapter

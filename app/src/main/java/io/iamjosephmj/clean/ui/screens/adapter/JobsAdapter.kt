@@ -25,11 +25,13 @@
 
 package io.iamjosephmj.clean.ui.screens.adapter
 
+import com.bumptech.glide.Glide
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
-import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegate
+import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateLayoutContainer
 import io.iamjosephmj.clean.R
 import io.iamjosephmj.core.domain.DisplayableItem
 import io.iamjosephmj.core.domain.GitHubJobDescription
+import kotlinx.android.synthetic.main.item_job.*
 
 
 val jobsAdapter = ListDelegationAdapter(
@@ -37,8 +39,14 @@ val jobsAdapter = ListDelegationAdapter(
 )
 
 fun jobsAdapterDelegate() =
-    adapterDelegate<GitHubJobDescription, DisplayableItem>(R.layout.item_job) {
-        //TODO:
-        bind { diffPayloads -> // diffPayloads is a List<Any> containing the Payload from your DiffUtils
+    adapterDelegateLayoutContainer<GitHubJobDescription, DisplayableItem>(R.layout.item_job) {
+
+        bind {
+            jobTitle.text = item.title
+            Glide
+                .with(jobImage.context)
+                .load(item.company_logo)
+                .error(R.drawable.broken_image)
+                .into(jobImage)
         }
     }
