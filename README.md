@@ -107,6 +107,8 @@ Before we dive in to the code, I would suggest you to read a bit about
 * <a href="https://github.com/ReactiveX/RxKotlin">`RxKotlin`</a>
 * <a href="https://developer.android.com/topic/libraries/architecture/viewmodel">`ViewModels`</a>
 * <a href="https://github.com/square/moshi">`Moshi`</a>
+* <a href="https://github.com/airbnb/lottie-android">`lottie-android`</a>
+* <a href="https://github.com/willowtreeapps/spruce-android">`spruce-android`</a>
 
 ### Layers of Clean Architecture
 
