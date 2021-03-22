@@ -46,7 +46,7 @@ Reactive Programming.
 ## Getting Started
 
 When it comes to Android development, there has always been an open debate, on which architectural pattern to use. Since my early days of 
-Android development I got a feeling that thing weren't right the way they were setup, This is the case with more than 90% of developers, which 
+Android development I got a feeling that thing weren't right the way they were setup, This is the case with more than 60% of developers, which 
 in turn; caused a lot of developers to struggle with the architecture in general.
 
 However, for quite a long time, there have been talks about writing your applications in a clean way. 
