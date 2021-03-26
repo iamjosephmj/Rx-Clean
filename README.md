@@ -66,9 +66,9 @@ it encapsulates the business logic but keeps it separate from the delivery mecha
 
 ### Why is this important ?
 
-When you take a real software development, Implementing an architecture have one common - to maintain the complexity 
-of your codebase. This may not be a big issue if the codebase are small, but trust me, this is be real lifesaver when 
-it come to larger ones.
+When you take a real software development, Implementing an architecture have one common goal - to maintain the complexity 
+of your codebase. This may not be a big issue if the codebase is small, but trust me, this will be a real lifesaver when 
+for larger ones.
 
 ### The Approach
 
